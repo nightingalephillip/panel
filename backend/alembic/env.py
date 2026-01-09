@@ -11,7 +11,7 @@ from app.core.config import settings
 from app.core.database import Base
 
 # Import all models here so they are registered with Base.metadata
-# from app.modules.auth.models import User
+from app.modules.auth.models import User  # noqa: F401
 # from app.modules.cases.models import Case, Subject, Observable, Task
 
 config = context.config
