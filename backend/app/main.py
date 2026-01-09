@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.modules.auth import router as auth_router
+from app.modules.cases import router as cases_router
 
 app = FastAPI(
     title="OSINT Dashboard API",
@@ -36,4 +37,4 @@ async def root():
 
 # Module routers
 app.include_router(auth_router, prefix="/api/v1")
-# app.include_router(cases_router, prefix="/api/v1")
+app.include_router(cases_router, prefix="/api/v1")
